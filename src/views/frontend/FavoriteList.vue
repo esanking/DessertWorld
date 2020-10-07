@@ -33,7 +33,7 @@
                 <div
                   class="orderImg img-fluid mr-2" style="cursor: pointer;"
                   @click.prevent="getProductId(item.id)">
-                  <img :src="item.imageUrl" alt="商品照片" style="height:100%;">
+                  <img :src="item.imageUrl" alt="商品照片" class="w-100 h-100">
                 </div>
                 <div class="align-self-center" @click.prevent="getProductId(item.id)"
                    style="cursor: pointer;">
