@@ -210,10 +210,10 @@ export default {
     border-radius: 0.25rem;
   }
   .menuColor :hover {
-    background-color: #EFD163;
+    background-color: #C7B259;
   }
   .listBg {
-    background-color: #EFD163;
+    background-color: #C7B259;
   }
   .menuBar {
     display: flex;
