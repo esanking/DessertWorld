@@ -1,13 +1,12 @@
 <template>
   <div>
-    <Alert></Alert>
+    <AlertMessage />
     <div class="cartDropdown">
       <a class="fixPage" @click.prevent="openList" href="#">
         <i class="fa fa-shopping-cart text-primary" style="font-size:32px" aria-hidden="true"></i>
         <span class="badge badge-pill" v-if="cartLen !== 0 ">
           {{ cartLen }}</span>
       </a>
-      <!-- 購物清單內容 -->
       <div class="cartBox dropdown-cart-menu" style="display: none;">
         <div class="row justify-content-center py-2">
           <div class="col-md-12">
@@ -33,9 +32,7 @@
                 class="cartIcon mr-3"
                 @click.once="deleteCartItem(item.id)"
               >
-                <!-- 若點擊後函式值等於產品id則畫面轉圈，以id作判定以避免全進行轉圈 -->
                 <i class="fas fa-spinner fa-pulse" v-if="deleteItem == item.id"></i>
-                <!-- 若不等於產品id顯示垃圾桶圖樣 -->
                 <i v-else class="fas fa-trash-alt"></i>
               </div>
               <div
@@ -66,7 +63,7 @@
               href="#"
               @click.prevent="closeList"
               to="/menumodel"
-            >繼續逛逛</router-link>
+            >前往購物</router-link>
           </div>
         </div>
       </div>
@@ -76,12 +73,12 @@
 
 <script>
 import $ from 'jquery';
-import Alert from '@/components/AlertMessage.vue';
+import AlertMessage from '@/components/AlertMessage.vue';
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
   components: {
-    Alert,
+    AlertMessage,
   },
   data() {
     return {
@@ -160,7 +157,7 @@ export default {
   .badge {
     transform: translate(30px, -50px);
     font-size: 11px;
-    background-color: #6c0fe6;
+    background-color: #323C74;
     color: #fff;
   }
   .cartBox {
@@ -168,13 +165,13 @@ export default {
     bottom: 70px;
     right: 85px;
     border-radius: 0.25rem;
-    box-shadow: 0.6rem 0rem 0.625rem 0.625rem #acb9a0;
+    box-shadow: 0.6rem 0rem 0.625rem 0.625rem #C7B259;
     background-color: #fff;
     z-index: 1000;
   }
   .closeIcon {
     margin-left: 120px;
-    color: #6c0fe6;
+    color: #323C74;
   }
   .cartItemImg {
     display: inline-block;
@@ -190,13 +187,13 @@ export default {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    color: #acb9a0;
-    border: 1px solid #acb9a0;
+    color: #C7B259;
+    border: 1px solid #C7B259;
     padding: 0.8rem;
     &:hover {
       color: white;
-      border: 1px solid #acb9a0;
-      background-color: #acb9a0;
+      border: 1px solid #C7B259;
+      background-color: #C7B259;
     }
   }
   @media (max-width: 767px) {

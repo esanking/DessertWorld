@@ -1,19 +1,19 @@
 <template>
   <div>
-    <buyProcess :progress="step"></buyProcess>
-    <div class="my-5 row justify-content-center">
+    <BuyProcess :progress="step"></BuyProcess>
+    <div class="my-5 row justify-content-center" v-if="!orderContent">
       <form class=" col-md-6" @submit.prevent="payorder">
         <table class="table" style="font-size: 16px;">
           <thead class=" table-light" style="font-size: 24px;">
             <th>品名</th>
-            <th>數量</th>
+            <th width="80">數量</th>
             <th>單價</th>
           </thead>
           <tbody>
             <tr v-for="item in order.products" :key="item.id">
-              <td class="align-middle">{{ item.product.title }}</td>
-              <td class="align-middle">{{ item.qty }}/{{ item.product.unit }}</td>
-              <td class="align-middle text-right">{{ item.final_total }}</td>
+              <td>{{ item.product.title }}</td>
+              <td>{{ item.qty }}/{{ item.product.unit }}</td>
+              <td class=" text-right">{{ item.final_total }}</td>
             </tr>
           </tbody>
           <tfoot class=" table-light" style="font-size: 18px;">
@@ -23,16 +23,10 @@
             </tr>
           </tfoot>
         </table>
-        <div class="w-100 d-flex justify-content-center" v-if="fireworks">
-          <img src="@/assets/img/gif/Fireworks.gif"
-          data-aos="fade-up" data-aos-duration="2000"
-           style=" position: absolute; z-index:100;" alt="煙火">
-        </div>
-
         <table class="table" style="font-size: 16px;">
           <tbody>
             <tr>
-              <th width="100">Email</th>
+              <th>Email</th>
               <td>{{ order.user.email }}</td>
             </tr>
             <tr>
@@ -56,26 +50,45 @@
             </tr>
           </tbody>
         </table>
-        <div class="text-right">
+        <div class="text-center">
           <button class="btn btn-primary text-white" v-if="order.is_paid === false"
            @click="payorder" type="button">確認付款去</button>
-          <button class="btn btn-primary" v-if="order.is_paid === true" type="button">
-            <router-link to="/menumodel" class="text-decoration-none text-white"
-            style="font-size:18px;">
-            <i class="fas fa-arrow-right pr-2"></i>返回繼續購物吧!</router-link>
-          </button>
         </div>
       </form>
+    </div>
+    <div class="row d-flex flex-column align-items-center"
+     v-if="orderContent">
+      <img src="@/assets/img/otherImg/tick.jpg" alt="確認圖片" width="80" class="mt-3">
+      <table class="table col-md-6 mt-3" style="font-size: 16px;">
+        <tbody>
+          <tr>
+            <th>訂單成立日期</th>
+            <td>{{ order.create_at | date }}</td>
+          </tr>
+          <tr>
+            <th>您的訂單編號</th>
+            <td>{{ order.id }}</td>
+          </tr>
+          <tr>
+            <th>您的訂單金額</th>
+            <td>{{ order.total }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary mt-3" type="button">
+        <router-link to="/menumodel" class="text-decoration-none text-white">
+        <i class="fas fa-arrow-right pr-2"></i>前往購物區</router-link>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import buyProcess from '@/components/BuyProcess.vue';
+import BuyProcess from '@/components/BuyProcess.vue';
 
 export default {
   components: {
-    buyProcess,
+    BuyProcess,
   },
   data() {
     return {
@@ -84,7 +97,7 @@ export default {
       },
       orderId: '',
       step: '3',
-      fireworks: false,
+      orderContent: false,
     };
   },
   methods: {
@@ -105,16 +118,13 @@ export default {
         vm.$store.dispatch('updateLoading', false);
         if (response.data.success) {
           vm.getorder();
+          vm.orderContent = true;
           vm.$bus.$emit('dataUpdata');
-          vm.fireworks = true;
           vm.$store.dispatch('MessageModules/updateMessage', { message: response.data.message, status: 'success' });
         } else {
           vm.$store.dispatch('MessageModules/updateMessage', { message: response.data.message, status: 'danger' });
         }
       });
-      setTimeout(() => {
-        vm.fireworks = false;
-      }, 6000);
     },
   },
   created() {
@@ -128,5 +138,8 @@ export default {
   .row {
     margin-right: 0;
     margin-left: 0;
+  }
+  .table th, .table td {
+    padding: 0.6rem;
   }
 </style>

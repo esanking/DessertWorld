@@ -1,32 +1,27 @@
 <template>
   <div>
-    <div class=" my-5">
+    <div class=" my-2">
       <div class="row buyMes">
         <div class="col text-center">
           <div style="height: 72px;"
-           :class="{ 'bg-primary text-white active': progress === '1',
-           'bg-light text-white active': progress != '1' }">
+           :class="{ 'bg-light text-white active': progress != '1' }">
             <strong>STEP 01</strong>
             <p><b>確認訂單資訊</b></p>
           </div>
         </div>
         <div class="col text-center">
           <div style="height: 72px;"
-           :class="{ 'bg-primary text-white active ': progress === '2',
-           'bg-light text-white active': progress === '3' }">
+           :class="{ 'bg-light text-white active': progress === '3' }">
             <strong>STEP 02</strong>
             <p><b>輸入訂購資料</b></p>
           </div>
         </div>
         <div class="col text-center">
-          <div style="height: 72px;"
-           :class="{ 'bg-primary text-white active': progress === '3' }">
+          <div style="height: 72px;">
             <strong>STEP 03</strong>
             <p>
               <b>
-                付款/
-                <br>
-                完成訂單
+                付款 / 完成訂單
               </b>
             </p>
           </div>

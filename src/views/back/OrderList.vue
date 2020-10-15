@@ -35,17 +35,17 @@
 </template>
 
 <script>
-import pagination from '@/components/Pagination.vue';
+import Pagination from '@/components/Pagination.vue';
 
 export default {
   data() {
     return {
-      pagination: {},
+      Pagination: {},
       order: [],
     };
   },
   components: {
-    pagination,
+    Pagination,
   },
   methods: {
     getorderList(page = 1) {

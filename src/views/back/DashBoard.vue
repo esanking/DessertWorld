@@ -1,10 +1,10 @@
 <template>
   <div>
     <loading :active.sync="isloading"></loading>
-    <navbar />
+    <Navbar />
     <div class="container-fluid">
       <div class="row">
-        <sidebar></sidebar>
+        <Sidebar />
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
           <router-view></router-view>
         </main>
@@ -14,13 +14,13 @@
 </template>
 
 <script>
-import sidebar from '@/components/Sidebar.vue';
-import navbar from '@/components/Navbar.vue';
+import Sidebar from '@/components/Sidebar.vue';
+import Navbar from '@/components/Navbar.vue';
 
 export default {
   components: {
-    sidebar,
-    navbar,
+    Sidebar,
+    Navbar,
   },
   computed: {
     isloading() {

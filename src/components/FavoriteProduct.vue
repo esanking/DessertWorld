@@ -1,18 +1,12 @@
 <template>
   <div>
-    <button class="btn float-right bg-white rounded-circle m-2
-      d-flex justify-content-center align-items-center"
-     style="width:40px; height:40px;" type="button"
+    <button class="btn" type="button"
      v-if="favorite" @click.stop="removeHeart(id)">
         <i class="fas fa-heart text-light" style="font-size:24px;"></i>
     </button>
-    <button class="btn float-right bg-white rounded-circle m-2
-     d-flex justify-content-center align-items-center"
-     style="width:40px; height:40px;" type="button"
+    <button class="btn" type="button"
      v-else @click.stop="addHeart(id)">
-      <span class="">
         <i class="far fa-heart" style="font-size:24px;"></i>
-      </span>
     </button>
   </div>
 </template>

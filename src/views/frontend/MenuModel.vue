@@ -1,17 +1,6 @@
 <template>
   <div>
-    <nav aria-label="breadcrumb" class="breadCrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <router-link to="/" class="text-decoration-none">Home</router-link>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">產品列表</li>
-        <li class="breadcrumb-item active" aria-current="page" v-if="!filtertext">全部商品</li>
-        <li class="breadcrumb-item active" aria-current="page" v-if="filtertext">
-            {{ filtertext }}</li>
-      </ol>
-    </nav>
-    <div class="menuBar">
+    <div class="menuBar mt-lg-5">
       <div>
         <div style="position:sticky; top:30px; width:95%;  margin: 0 auto;">
           <div id="list-example" class="list-group">
@@ -20,7 +9,7 @@
               v-for="(item,key) in text" :key="key">
               <a class="list-group-item list-group-item-action"
                  :class="{ 'listBg': filtertext === item.title }"
-                @click=" filterPro(item.title);" href="#menumodel">
+                @click.prevent=" filterPro(item.title);" href="#menumodel">
                 <i :class="item.icon" aria-hidden="true" class="mr-5 text-primary"></i>
                 {{ item.title }}
               </a>
@@ -29,7 +18,8 @@
           <div class="search my-2">
             <input type="text" class="form-control searchInput" v-model="searchtext"
              placeholder="搜尋商品" @keyup.enter.stop="searchProduct" />
-            <button type="button" class="input-group-text bg-light" @click.stop="searchProduct">
+            <button type="button" class="input-group-text searchInputBtn bg-light"
+             @click.prevent="searchProduct">
               <i class="fa fa-search" aria-hidden="true"></i>
             </button>
           </div>
@@ -46,11 +36,15 @@
         <div class="row cardList" v-if="!notSearchtext">
           <div class="col-6 cards"
            v-for="item in filterProducts" :key="item.id">
-            <div class="card border-0 cardBg" style="cursor: pointer;"
+            <div class="card cardBg" style="cursor: pointer;"
              @click.prevent="getProductId(item.id)">
               <div class="cardImg"
                 :style="{backgroundImage: `url(${ item.imageUrl })`}">
-                <myFavorite :productid="item.id"></myFavorite>
+                <p style="width:50px; height:50px;"
+                 class="float-right bg-white rounded-circle m-1
+                 d-flex justify-content-center align-items-center">
+                  <FavoriteProduct :productid="item.id"></FavoriteProduct>
+                </p>
               </div>
               <div class="card-body">
                 <span class="badge badge-light ml-2 dataText">{{ item.category }}</span>
@@ -80,10 +74,10 @@
           </div>
         </div>
         <div v-if="openPagination" class="d-flex justify-content-center my-5">
-          <pagination
+          <Pagination
             :pages="pagination"
             @changedpage="getProductPage">
-          </pagination>
+          </Pagination>
         </div>
       </div>
     </div>
@@ -91,14 +85,14 @@
 </template>
 
 <script>
-import pagination from '@/components/Pagination.vue';
-import myFavorite from '@/components/FavoriteProduct.vue';
+import Pagination from '@/components/Pagination.vue';
+import FavoriteProduct from '@/components/FavoriteProduct.vue';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
   components: {
-    pagination,
-    myFavorite,
+    Pagination,
+    FavoriteProduct,
   },
   data() {
     return {
@@ -212,17 +206,14 @@ export default {
 <style lang="scss" scoped>
   .menuColor {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 400;
     border-radius: 0.25rem;
   }
   .menuColor :hover {
-    background-color: #acb9a0;
+    background-color: #EFD163;
   }
   .listBg {
-    background-color: #acb9a0;
-  }
-  .breadCrumb {
-    font-size:18px;
+    background-color: #EFD163;
   }
   .menuBar {
     display: flex;
@@ -254,18 +245,23 @@ export default {
   }
   .searchInput {
     font-size: 18px;
+    border-bottom-right-radius: 0%;
+    border-top-right-radius: 0%;
+  }
+  .searchInputBtn {
+    border-bottom-left-radius: 0%;
+    border-top-left-radius: 0%;
   }
   .titleText {
-    font-weight: bold;
+    font-weight: 600;
     text-decoration: none;
     font-size: 32px;
   }
   .dataText {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 400;
   }
   .cardBg {
-    box-shadow: 1px 1px 1px 2px #dee2e6;
     width: 460px;
     height: 595px;
   }
@@ -275,9 +271,6 @@ export default {
     font-weight: bold;
   }
   @media (max-width: 991px) {
-    .breadCrumb {
-      max-width: 100%;
-    }
     .menuBar {
       flex-direction: column;
     }

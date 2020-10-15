@@ -11,7 +11,7 @@
         </div>
         <router-link class="d-flex justify-content-center mb-5 text-decoration-none"
          to="/menumodel">
-          <button class="btn btn-outline-primary rounded btn-lg " type="button">
+          <button class="btn btn-outline-primary rounded " type="button">
              查看所有商品
           </button>
         </router-link>

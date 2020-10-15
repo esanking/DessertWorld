@@ -3,7 +3,7 @@
     <nav aria-label="breadcrumb" class="breadCrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <router-link to="/" class="text-decoration-none">Home</router-link>
+          <router-link to="/" class="text-decoration-none">首頁</router-link>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           <router-link to="/menumodel" class="text-decoration-none">產品列表</router-link>
@@ -39,53 +39,48 @@
             </select>
             <button type="button" class="btn btn-primary mt-3 mx-2"
               @click.prevent="addCart(product.id,product.num)"
-            >加入購物車</button>
+              >加入購物車
+            </button>
           </div>
-        </div>
-      </div>
-      <div class="text-center w-100 mt-5 productProblem">
-        <div class="productProblemItem"
-         style="font-size: 18px;">
-          <div class="w-75" style="margin:0 auto;">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
-                role="tab" aria-controls="home" aria-selected="true">產品介紹</a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#eatMean"
-                role="tab" aria-controls="profile" aria-selected="false">食用方式</a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"
-                  role="tab" aria-controls="contact" aria-selected="false">常見問題</a>
-              </li>
-            </ul>
-            <div class="tab-content text-left font-weight-bold w-75" id="myTabContent"
-            style="font-size:16px;">
-              <div class="tab-pane fade show active text-primary" id="home" role="tabpanel"
-              aria-labelledby="home-tab">{{ product.description }}</div>
-              <div class="tab-pane fade text-primary" id="eatMean" role="tabpanel"
-              aria-labelledby="profile-tab">{{ product.content }}</div>
-              <div class="tab-pane fade text-primary" id="contact" role="tabpanel"
-              aria-labelledby="contact-tab">
-                <p>【三大保證聲明】
-                  <br>
-                  ✓ SGS國家檢驗通過，讓您吃得安心！
-                  <br>
-                  ✓ 不添加人工添加物和氫化植物油，讓您吃得健康！
-                  <br>
-                  ✓ 堅持冷藏運送，讓您吃到食品最佳風味！
-                </p>
+          <div class="text-center w-100 mt-5 ">
+            <div style="font-size: 18px;">
+              <div class="w-100" style="margin:0 auto;">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+                    role="tab" aria-controls="home" aria-selected="true">產品介紹</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#eatMean"
+                    role="tab" aria-controls="profile" aria-selected="false">食用方式</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"
+                      role="tab" aria-controls="contact" aria-selected="false">常見問題</a>
+                  </li>
+                </ul>
+                <div class="tab-content text-left font-weight-bold w-100" id="myTabContent"
+                style="font-size:16px;">
+                  <div class="tab-pane fade show active text-primary" id="home" role="tabpanel"
+                  aria-labelledby="home-tab">{{ product.description }}</div>
+                  <div class="tab-pane fade text-primary" id="eatMean" role="tabpanel"
+                  aria-labelledby="profile-tab">{{ product.content }}</div>
+                  <div class="tab-pane fade text-primary" id="contact" role="tabpanel"
+                  aria-labelledby="contact-tab">
+                    <p>【三大保證聲明】
+                      <br>
+                      ✓ SGS國家檢驗通過，讓您吃得安心！
+                      <br>
+                      ✓ 不添加人工添加物和氫化植物油，讓您吃得健康！
+                      <br>
+                      ✓ 堅持冷藏運送，讓您吃到食品最佳風味！
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <span class="productProblemItem">
-          <span class="title mt-5">每個產品都是我們師傅精心製作</span>
-          <img src="@/assets/img/Bakery/baker.jpg"
-            class="mt-5 img-thumbnail bakeryImgSz" alt="製作產品照片" />
-        </span>
       </div>
       <div class="w-100 my-5">
         <h3 class="w-100 text-center"><b>相關產品</b></h3>
@@ -198,17 +193,17 @@ export default {
   .productItemIn img {
     width: 80%;
   }
-  .productProblem {
-    display: flex;
-    justify-content: center;
-  }
-  .productProblemItem {
-    width: 48%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+  // .productProblem {
+  //   display: flex;
+  //   justify-content: center;
+  // }
+  // .productProblemItem {
+  //   width: 48%;
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   justify-content: center;
+  // }
   .bakeryImgSz {
     width: 80%;
   }
@@ -240,13 +235,13 @@ export default {
     .productItemIn img {
       width: 70%;
     }
-    .productProblem {
-      flex-direction: column;
-      align-items: center;
-    }
-    .productProblemItem {
-      width: 98%;
-    }
+    // .productProblem {
+    //   flex-direction: column;
+    //   align-items: center;
+    // }
+    // .productProblemItem {
+    //   width: 98%;
+    // }
     .cards {
       flex-direction: column;
       align-items: center;

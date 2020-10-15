@@ -1,12 +1,16 @@
 <template>
   <div>
-    <buyProcess :progress="step" v-if="cartLen !== 0"></buyProcess>
+    <BuyProcess :progress="step"></BuyProcess>
     <div v-if="cartLen === 0" class="d-flex
-      align-items-center flex-column my-5">
-      <h6><b>您還未加入商品至購物車，快來去逛逛吧!</b></h6>
-      <img src="@/assets/img/gif/addCart.gif" data-aos="fade-right"
-      data-aos-duration="2000" alt="加入購物車gif" class="my-3">
-      <router-link to="/menumodel" class="btn btn-outline-light">
+      align-items-center flex-column">
+      <p style="font-size: 24px;" class="mx-2">
+        <b>您還未加入商品至購物車，快來去逛逛吧!</b>
+      </p>
+      <router-link to="/menumodel">
+        <img src="@/assets/img/gif/addCart.gif" data-aos="fade-down"
+        data-aos-duration="2000" alt="加入購物車gif" class="my-1">
+      </router-link>
+      <router-link to="/menumodel" class="btn btn-primary">
       前往購物商城</router-link>
     </div>
     <div v-if="cartLen !== 0">
@@ -61,7 +65,7 @@
         <div class="row">
           <div class="col-md-8">
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="輸入優惠碼"
+              <input type="text" class="form-control" placeholder="輸入優惠碼 520"
                v-model="coupon_code" @keyup.enter="addCoupon_code" />
               <div class="input-group-append">
                 <button class="btn btn-outline-light" type="button"
@@ -92,7 +96,7 @@
               <router-link to="/menumodel" class="btn btn-outline-light
                mr-auto">返回購物</router-link>
               <router-link to="/clientForm"
-               class="btn btn-outline-primary">填寫資料</router-link>
+               class="btn btn-primary">填寫資料</router-link>
             </div>
           </div>
         </div>
@@ -103,11 +107,11 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-import buyProcess from '@/components/BuyProcess.vue';
+import BuyProcess from '@/components/BuyProcess.vue';
 
 export default {
   components: {
-    buyProcess,
+    BuyProcess,
   },
   data() {
     return {

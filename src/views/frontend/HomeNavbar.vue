@@ -17,44 +17,38 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse justify-content-between menu" id="navbarNav">
           <ul class="navbar-nav" style="font-size:18px; ">
             <li class="nav-item active">
-              <router-link class="nav-link" style="font-size: 25px;"
+              <router-link class="nav-link headerFz"
               to="/" title="首頁">首頁</router-link>
             </li>
             <li class="nav-item active">
-              <router-link class="nav-link" style="font-size: 25px;"
+              <router-link class="nav-link headerFz"
               to="/menumodel" title="商品列表">商品列表</router-link>
             </li>
           </ul>
-
           <ul class="navbar-nav font-weight-bold" style="font-size:20px;">
             <li class="nav-item">
-              <router-link class="nav-link text-dark" style="font-size: 25px;"
+              <router-link class="nav-link text-dark headerFz"
               to="/favoriteList" title="我的最愛">
                 <!-- <i class="fas fa-heart"></i> -->
                 收藏
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link text-dark" style="font-size: 25px;"
+              <router-link class="nav-link text-dark headerFz"
               to="/login" title="後台登入系統">
                 <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
                   後台登入
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link text-dark" style="font-size: 25px;"
+              <router-link class="nav-link text-dark headerFz"
               to="/ordercheck" title="購物車">
                 <!-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> -->
                 購物車
               </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link text-dark" style="font-size: 25px;"
-              to="/couponPage" title="優惠碼領取">優惠碼</router-link>
             </li>
           </ul>
         </div>
@@ -63,9 +57,9 @@
         <router-view></router-view>
       </div>
       <footer class="footer bg-light">
-        <div class="footerGroup">
-          <router-link class=" logoName text-primary" to="/">
-            Dessert World
+        <div class="footerGroup align-items-center align-items-lg-end">
+          <router-link class="smlogo" to="/">
+            <img src="@/assets/img/logo1.jpg" alt="Logo">
           </router-link>
           <ul class="text-left" style="font-size: 18px; list-style-type: none;">
             <li><i class="fa fa-phone-square" aria-hidden="true"></i><b>05-1234567</b></li>
@@ -73,50 +67,49 @@
             <li><i class="fas fa-clock" aria-hidden="true"></i><b>週一~週日 9:00~17:00</b></li>
           </ul>
         </div>
-        <div class="footerGroup">
-          <h4><b>訂閱我們</b></h4>
+        <div class="footerGroup align-items-center align-items-lg-end">
           <div class="input-group mb-2">
              <span class="input-group-text">
                <i class="fa fa-envelope" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" placeholder="訂閱我們"
+            <input type="text" class="form-control" placeholder="訂閱DessertWorld"
              aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">
               <button class="btn btn-outline-primary" type="button"
-               id="button-addon2" style="z-index:101;">Button</button>
+               id="button-addon2" style="z-index:101; font-weight:bold;">發送</button>
             </div>
           </div>
           <span>
             <a href="https://www.facebook.com/">
-            <i class="fab fa-facebook-f mr-3" aria-hidden="true"
-              style="font-size:32px"></i>
+              <i class="fab fa-facebook-f mr-3" aria-hidden="true"
+                style="font-size:32px"></i>
             </a>
             <a href="https://www.instagram.com/">
               <i class="fab fa-instagram mr-3" aria-hidden="true"
-              style="font-size:32px"></i>
+                style="font-size:32px"></i>
             </a>
             <a href="https://twitter.com/?lang=zh-tw">
               <i class="fab fa-twitter" aria-hidden="true"
-              style="font-size:32px"></i>
+                style="font-size:32px"></i>
             </a>
           </span>
           <b style="font-size:18px;">僅做為個人學習使用，非商業用途。</b>
         </div>
       </footer>
-      <div class="btn goTop" id="SliderTop">
+      <div class="btn goTop bg-light text-primary" id="SliderTop">
         <i class="fas fa-angle-double-up"></i>
       </div>
-      <shoppingcarts style="z-index: 100;"></shoppingcarts>
+      <ShoppingCart style="z-index: 100;"></ShoppingCart>
     </div>
   </div>
 </template>
 
 <script>
 import $ from 'jquery';
-import shoppingcarts from '@/views/frontend/ShoppingCart.vue';
+import ShoppingCart from '@/views/frontend/ShoppingCart.vue';
 
 export default {
   components: {
-    shoppingcarts,
+    ShoppingCart,
   },
   data() {
     return {};
@@ -157,6 +150,12 @@ export default {
       width: 300px;
     }
   }
+  .smlogo img{
+    width: 250px;
+  }
+  .headerFz {
+    font-size: 25px;
+  }
   .logoName{
     font-weight: bold;
     font-size: 32px;
@@ -171,9 +170,7 @@ export default {
   .footerGroup {
     width: 300px;
     height: 180px;
-    text-align: center;
     display: flex;
-    align-items: center;
     flex-direction: column;
     justify-content: space-around;
   }
@@ -188,7 +185,6 @@ export default {
     font-weight: bold;
   }
   .goTop {
-    background: #acb9a0;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -196,7 +192,6 @@ export default {
     z-index: 100;
     bottom: 30px;
     right: 35px;
-    color: #6c0fe6;
     font-size:32px;
   }
   .menu .nav-link {
@@ -234,6 +229,9 @@ export default {
       img {
         width: 200px;
       }
+    }
+    .smlogo img {
+      width: 180px;
     }
   }
 </style>

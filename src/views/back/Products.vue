@@ -38,7 +38,7 @@
     </table>
     </div>
     <div class="d-flex justify-content-center">
-      <pagination :pages="pagination" @changedpage="getproducts"></pagination>
+      <Pagination :pages="pagination" @changedpage="getproducts"></Pagination>
     </div>
     <!-- Modal -->
 
@@ -229,11 +229,11 @@
 
 <script>
 import $ from 'jquery';
-import pagination from '@/components/Pagination.vue';
+import Pagination from '@/components/Pagination.vue';
 
 export default {
   components: {
-    pagination,
+    Pagination,
   },
   data() {
     return {

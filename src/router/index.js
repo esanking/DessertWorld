@@ -8,29 +8,29 @@ export default new VueRouter({
     {
       name: 'login',
       path: '/login',
-      component: () => import('@/components/back/Login.vue'),
+      component: () => import('@/views/back/Login.vue'),
     },
     {
       path: '/admin',
-      component: () => import('@/components/back/DashBoard.vue'),
+      component: () => import('@/views/back/DashBoard.vue'),
       meta: { requiresAuth: true },
       children: [
         {
           name: 'products',
           path: '/products',
-          component: () => import('@/components/back/Products.vue'),
+          component: () => import('@/views/back/Products.vue'),
           meta: { requiresAuth: true },
         },
         {
           name: 'coupon',
           path: '/coupon',
-          component: () => import('@/components/back/Coupon.vue'),
+          component: () => import('@/views/back/Coupon.vue'),
           meta: { requiresAuth: true },
         },
         {
           name: 'orderList',
           path: '/orderList',
-          component: () => import('@/components/back/OrderList.vue'),
+          component: () => import('@/views/back/OrderList.vue'),
           meta: { requiresAuth: true },
         },
       ],
@@ -67,11 +67,6 @@ export default new VueRouter({
         name: 'customerCheckout',
         path: '/customerCheckout/:orderId',
         component: () => import('@/views/frontend/CustomerCheckout.vue'),
-      },
-      {
-        name: 'couponPage',
-        path: '/couponPage',
-        component: () => import('@/views/frontend/CouponPage.vue'),
       },
       {
         name: 'favoriteList',
