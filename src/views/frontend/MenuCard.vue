@@ -14,67 +14,69 @@
     </nav>
     <div class="wraps">
       <div class="productItem mt-4">
-        <div class="productItemIn">
-          <img :src="product.imageUrl" alt= "商品照片" />
+        <div class="productItemIn col-md-8">
+          <span class="row">
+            <img :src="product.imageUrl" alt= "商品照片" />
+          </span>
         </div>
-        <div class="productItemIn">
-          <span class="title">{{ product.title }}</span>
-          <div
-            style="border-bottom:2px solid #dee2e6; font-size:18px;"
-            class="mt-4 d-flex justify-content-around"
-          >
-            <div
-              style="text-decoration: line-through;"
-              v-if="!product.origin_price == ''"
-            >售價: {{ product.origin_price }}</div>
-            <div>特價 : {{ product.price }}</div>
-          </div>
-          <div class="mt-4 d-flex justify-content-center">
-            <select name class="form-control mt-3 w-50" v-model="product.num">
+        <div class="productItemIn col-md-4">
+          <div class="row">
+            <span class="title">{{ product.title }}</span>
+            <div style=" font-size:18px;" class="mt-4 d-flex justify-content-end">
+              <div
+                style="text-decoration: line-through;"
+                v-if="!product.origin_price == ''"
+              >NT{{ product.origin_price | currency}}</div>
+              <div class="ml-2" style="font-size: 20px; font-weight: 600;">
+                NT{{ product.price | currency }}</div>
+            </div>
+            <!-- <div class="mt-4 d-flex justify-content-center"> -->
+            <select name class="form-control mt-3 w-100" v-model="product.num">
               <option
                 :value="num"
                 v-for="(num,item) in 10"
                 :key="item"
               >選購 {{ num }} {{ product.unit }}</option>
             </select>
-            <button type="button" class="btn btn-primary mt-3 mx-2"
+            <button type="button" class="btn btn-primary mt-3 w-100"
               @click.prevent="addCart(product.id,product.num)"
               >加入購物車
             </button>
-          </div>
-          <div class="text-center w-100 mt-5 ">
-            <div style="font-size: 18px;">
-              <div class="w-100" style="margin:0 auto;">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
-                    role="tab" aria-controls="home" aria-selected="true">產品介紹</a>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#eatMean"
-                    role="tab" aria-controls="profile" aria-selected="false">食用方式</a>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"
-                      role="tab" aria-controls="contact" aria-selected="false">常見問題</a>
-                  </li>
-                </ul>
-                <div class="tab-content text-left font-weight-bold w-100" id="myTabContent"
-                style="font-size:16px;">
-                  <div class="tab-pane fade show active text-primary" id="home" role="tabpanel"
-                  aria-labelledby="home-tab">{{ product.description }}</div>
-                  <div class="tab-pane fade text-primary" id="eatMean" role="tabpanel"
-                  aria-labelledby="profile-tab">{{ product.content }}</div>
-                  <div class="tab-pane fade text-primary" id="contact" role="tabpanel"
-                  aria-labelledby="contact-tab">
-                    <p>【三大保證聲明】
-                      <br>
-                      ✓ SGS國家檢驗通過，讓您吃得安心！
-                      <br>
-                      ✓ 不添加人工添加物和氫化植物油，讓您吃得健康！
-                      <br>
-                      ✓ 堅持冷藏運送，讓您吃到食品最佳風味！
-                    </p>
+            <!-- </div> -->
+            <div class="text-center w-100 mt-5 ">
+              <div style="font-size: 18px;">
+                <div class="w-100" style="margin:0 auto;">
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+                      role="tab" aria-controls="home" aria-selected="true">產品介紹</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#eatMean"
+                      role="tab" aria-controls="profile" aria-selected="false">食用方式</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"
+                        role="tab" aria-controls="contact" aria-selected="false">常見問題</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content text-left font-weight-bold w-100" id="myTabContent"
+                  style="font-size:16px;">
+                    <div class="tab-pane fade show active text-primary" id="home" role="tabpanel"
+                    aria-labelledby="home-tab">{{ product.description }}</div>
+                    <div class="tab-pane fade text-primary" id="eatMean" role="tabpanel"
+                    aria-labelledby="profile-tab">{{ product.content }}</div>
+                    <div class="tab-pane fade text-primary" id="contact" role="tabpanel"
+                    aria-labelledby="contact-tab">
+                      <p>【三大保證聲明】
+                        <br>
+                        ✓ SGS國家檢驗通過，讓您吃得安心！
+                        <br>
+                        ✓ 不添加人工添加物和氫化植物油，讓您吃得健康！
+                        <br>
+                        ✓ 堅持冷藏運送，讓您吃到食品最佳風味！
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -83,7 +85,9 @@
         </div>
       </div>
       <div class="w-100 my-5">
-        <h3 class="w-100 text-center"><b>相關產品</b></h3>
+        <span class="text-center d-flex justify-content-center">
+          <h3 class=" RelatedText"><b>相關產品</b></h3>
+        </span>
         <div class="w-100 my-5 cards">
           <div v-for="(item, key) in filterProduct" :key="key">
             <div class="card my-3" style="width:300px; height:320px;"
@@ -166,8 +170,8 @@ export default {
 </script>
 
 <style lang="scss">
-  img {
-    max-width: 100%;
+  .productItemIn .row {
+    flex-direction: column;
   }
   .wraps {
     display: flex;
@@ -187,23 +191,36 @@ export default {
     width: 90%;
   }
   .productItemIn {
-    width: 90%;
     text-align: center;
   }
   .productItemIn img {
-    width: 80%;
+    width: 70%;
+    margin: 0 auto;
   }
-  // .productProblem {
-  //   display: flex;
-  //   justify-content: center;
-  // }
-  // .productProblemItem {
-  //   width: 48%;
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   justify-content: center;
-  // }
+  .RelatedText {
+    position: relative;
+    width: 25%;
+  }
+  .RelatedText::before {
+    content: "";
+    position: absolute;
+    left: 75%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 3px;
+    background-color: #000;
+  }
+  .RelatedText::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 75%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 3px;
+    background-color: #000;
+  }
   .bakeryImgSz {
     width: 80%;
   }
@@ -229,19 +246,6 @@ export default {
       flex-direction: column;
       align-items: center;
     }
-    .productItemIn {
-      width: 80%;
-    }
-    .productItemIn img {
-      width: 70%;
-    }
-    // .productProblem {
-    //   flex-direction: column;
-    //   align-items: center;
-    // }
-    // .productProblemItem {
-    //   width: 98%;
-    // }
     .cards {
       flex-direction: column;
       align-items: center;
@@ -250,14 +254,14 @@ export default {
   @media (max-width: 767px) {
   }
   @media (max-width: 576px) {
-    .productItemIn {
-      width: 100%;
-    }
     .productItemIn img {
-      width: 95%;
+      width: 100%;
     }
     .bakeryImgSz {
       width: 98%;
+    }
+    .RelatedText {
+      width: 90%;
     }
   }
 </style>

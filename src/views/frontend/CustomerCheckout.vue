@@ -58,7 +58,7 @@
     </div>
     <div class="row d-flex flex-column align-items-center"
      v-if="orderContent">
-      <img src="@/assets/img/otherImg/tick.jpg" alt="確認圖片" width="80" class="mt-3">
+      <i class="fa fa-check-circle my-2" style="font-size: 32px;" aria-hidden="true">訂單完成</i>
       <table class="table col-md-6 mt-3" style="font-size: 16px;">
         <tbody>
           <tr>
@@ -117,9 +117,9 @@ export default {
       vm.$http.post(api).then((response) => {
         vm.$store.dispatch('updateLoading', false);
         if (response.data.success) {
-          vm.getorder();
           vm.orderContent = true;
           vm.$bus.$emit('dataUpdata');
+          vm.getorder();
           vm.$store.dispatch('MessageModules/updateMessage', { message: response.data.message, status: 'success' });
         } else {
           vm.$store.dispatch('MessageModules/updateMessage', { message: response.data.message, status: 'danger' });

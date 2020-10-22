@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide" style="" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active" data-interval="3000">
           <router-link to="/menumodel">
@@ -8,7 +8,10 @@
             <div class="carouseText d-none d-md-block">
               <h1 class="display-4">前往甜點世界</h1>
               <h4>讓甜食讓生活更美好</h4>
-              <h1 class="display-4">點擊前甜點世界吧!</h1>
+              <button class="btn btn-primary">
+                <router-link class="carouselBtnSz text-white text-decoration-none"
+                to="/menumodel">前往商品區</router-link>
+              </button>
             </div>
           </router-link>
         </div>
@@ -18,7 +21,10 @@
             <div class="carouseText d-none d-md-block">
               <h1 class="display-4">前往甜點世界</h1>
               <h4>讓甜食讓生活更美好</h4>
-              <h1 class="display-4">點擊前甜點世界吧!</h1>
+              <button class="btn btn-primary">
+                <router-link class="carouselBtnSz text-white text-decoration-none"
+                to="/menumodel">前往商品區</router-link>
+              </button>
             </div>
           </router-link>
         </div>
@@ -28,7 +34,10 @@
             <div class="carouseText d-none d-md-block">
               <h1 class="display-4">前往甜點世界</h1>
               <h4>讓甜食讓生活更美好</h4>
-              <h1 class="display-4">點擊前甜點世界吧!</h1>
+              <button class="btn btn-primary">
+                <router-link class="carouselBtnSz text-white text-decoration-none"
+                to="/menumodel">前往商品區</router-link>
+              </button>
             </div>
           </router-link>
         </div>
@@ -54,11 +63,7 @@
     </div>
     <div class="d-flex flex-column my-5">
       <div class="d-flex flex-column align-items-center">
-        <button class="btn btn-primary">
-          <router-link class="title text-white text-decoration-none"
-          to="/menumodel">點擊前往商品區</router-link>
-        </button>
-        <div class="mt-2" style="border-bottom: 1px #000 solid; width:100px"></div>
+        <div style="border-bottom: 1px #000 solid; width:100px"></div>
         <p class="title">精選商品</p>
         <div class="row featuredPro">
           <div class="card col m-2" style="width: 18rem;">
@@ -99,9 +104,9 @@
             />
           </span>
           <div class="texts order-lg-1" data-aos="fade-right" data-aos-duration="2000">
-            <h3 class="py-4 border-bottom title">DessertWorld 名子的由來</h3>
+            <h3 class="py-4 border-bottom title">DessertWorld 名字的由來</h3>
             <p>
-              很多人好奇，為什麼我們要名子為「 DessertWorld 」呢？
+              很多人好奇，為什麼我們要名字為「 DessertWorld 」呢？
             <br>
             源頭到底是什麼呢?
             <br>
@@ -261,14 +266,16 @@ export default {
   }
   .carouseText {
     position: absolute;
-    right: 1%;
-    top: 1%;
+    right: 20%;
+    bottom: 1%;
+    left: 20%;
     background: hsla(0,0%,40%,.6);
     z-index: 10;
-    padding-top: 20px;
-    padding-bottom: 20px;
     color: #fff;
     text-align: center;
+  }
+  .carouselBtnSz {
+    font-size: 18px;
   }
   .bgCover {
     background-repeat: no-repeat;

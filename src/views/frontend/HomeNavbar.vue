@@ -4,7 +4,7 @@
     <div class="wrap">
       <nav class="navbar navbar-expand-lg navbar-light" style>
         <router-link class="navbar-brand logo" to="/">
-          <img src="@/assets/img/logo1.jpg" alt="Logo">
+          <img src="@/assets/img/logoHeader.jpg" alt="Logo">
         </router-link>
         <button
           class="navbar-toggler"
@@ -56,43 +56,47 @@
       <div class="container my-3">
         <router-view></router-view>
       </div>
-      <footer class="footer bg-light">
-        <div class="footerGroup align-items-center align-items-lg-end">
-          <router-link class="smlogo" to="/">
-            <img src="@/assets/img/logo1.jpg" alt="Logo">
-          </router-link>
-          <ul class="text-left" style="font-size: 18px; list-style-type: none;">
-            <li><i class="fa fa-phone-square" aria-hidden="true"></i><b>05-1234567</b></li>
-            <li><i class="fa fa-envelope" aria-hidden="true"></i><b> DessertWorld@gmail.com</b></li>
-            <li><i class="fas fa-clock" aria-hidden="true"></i><b>週一~週日 9:00~17:00</b></li>
-          </ul>
-        </div>
-        <div class="footerGroup align-items-center align-items-lg-end">
-          <div class="input-group mb-2">
-             <span class="input-group-text">
-               <i class="fa fa-envelope" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" placeholder="訂閱DessertWorld"
-             aria-label="Recipient's username" aria-describedby="button-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-outline-primary" type="button"
-               id="button-addon2" style="z-index:101; font-weight:bold;">發送</button>
-            </div>
+      <footer class="w-100 bg-light">
+        <div class="footer ">
+          <div class="footerGroup align-items-center align-items-lg-end">
+            <router-link class="smlogo" to="/">
+              <img src="@/assets/img/logoFooter.jpg" alt="Logo">
+            </router-link>
+            <ul class="text-left" style="font-size: 18px; list-style-type: none;">
+              <li><i class="fa fa-phone-square" aria-hidden="true"></i><b>05-1234567</b></li>
+              <li><i class="fa fa-envelope" aria-hidden="true"></i>
+                <b> DessertWorld@gmail.com</b>
+              </li>
+              <li><i class="fas fa-clock" aria-hidden="true"></i><b>週一~週日 9:00~17:00</b></li>
+            </ul>
           </div>
-          <span>
-            <a href="https://www.facebook.com/">
-              <i class="fab fa-facebook-f mr-3" aria-hidden="true"
-                style="font-size:32px"></i>
-            </a>
-            <a href="https://www.instagram.com/">
-              <i class="fab fa-instagram mr-3" aria-hidden="true"
-                style="font-size:32px"></i>
-            </a>
-            <a href="https://twitter.com/?lang=zh-tw">
-              <i class="fab fa-twitter" aria-hidden="true"
-                style="font-size:32px"></i>
-            </a>
-          </span>
-          <b style="font-size:18px;">僅做為個人學習使用，非商業用途。</b>
+          <div class="footerGroup align-items-center align-items-lg-end">
+            <div class="input-group mb-2">
+              <span class="input-group-text">
+                <i class="fa fa-envelope" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" placeholder="訂閱DessertWorld"
+              aria-label="Recipient's username" aria-describedby="button-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-outline-primary" type="button"
+                id="button-addon2" style="z-index:101; font-weight:bold;">發送</button>
+              </div>
+            </div>
+            <span>
+              <a href="https://www.facebook.com/">
+                <i class="fab fa-facebook-f mr-3" aria-hidden="true"
+                  style="font-size:32px"></i>
+              </a>
+              <a href="https://www.instagram.com/">
+                <i class="fab fa-instagram mr-3" aria-hidden="true"
+                  style="font-size:32px"></i>
+              </a>
+              <a href="https://twitter.com/?lang=zh-tw">
+                <i class="fab fa-twitter" aria-hidden="true"
+                  style="font-size:32px"></i>
+              </a>
+            </span>
+            <b style="font-size:18px;">僅做為個人學習使用，非商業用途。</b>
+          </div>
         </div>
       </footer>
       <div class="btn goTop bg-light text-primary" id="SliderTop">
@@ -162,7 +166,8 @@ export default {
     text-decoration: none;
   }
   .footer {
-    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
     padding-bottom: 1em;
     display: flex;
     justify-content: space-evenly;

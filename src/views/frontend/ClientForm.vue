@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <p class="h5 pt-3">選填區</p>
+          <p class="h5">選填區</p>
           <div class="form-group">
             <label for="comment">留言</label>
             <textarea name="" id="comment" class="form-control" cols="30"
