@@ -261,22 +261,22 @@ export default {
 <style scoped>
   .carousel {
     width: 100%;
-    height: 500px;
+    height: 600px;
   }
   .carousel01 {
-    height: 500px;
+    height: 600px;
     background-image: url("~@/assets/img/cake/priscilla.jpg");
-    background-position: top 10% right 50%;
+    background-position: top 12% right 50%;
   }
   .carousel02 {
-    height: 500px;
+    height: 600px;
     background-image: url("~@/assets/img/home/apple2.jpg");
     background-position: right;
   }
   .carousel03 {
-    height: 500px;
+    height: 600px;
     background-image: url("~@/assets/img/home/bread.jpg");
-    background-position: bottom;
+    background-position: bottom 10% right 50%;
   }
   .carouseText {
     position: absolute;
@@ -344,16 +344,16 @@ export default {
   }
   @media (max-width: 991px) {
     .carousel {
-      height: 400px;
+      height: 500px;
     }
     .carousel01 {
-      height: 400px;
+      height: 500px;
     }
     .carousel02 {
-      height: 400px;
+      height: 500px;
     }
     .carousel03 {
-      height: 400px;
+      height: 500px;
     }
     .bossName {
       width: 98%;
@@ -384,16 +384,16 @@ export default {
   }
   @media (max-width: 767px) {
     .carousel {
-      height: 300px;
+      height: 350px;
     }
     .carousel01 {
-      height: 300px;
+      height: 350px;
     }
     .carousel02 {
-      height: 300px;
+      height: 350px;
     }
     .carousel03 {
-      height: 300px;
+      height: 350px;
     }
     .title {
       font-size: 24px;
