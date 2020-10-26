@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="menuBar mt-lg-5">
+    <div class="container menuBar mt-lg-5">
       <div>
         <div style="position:sticky; top:30px; width:95%;  margin: 0 auto;">
           <div id="list-example" class="list-group">
@@ -40,11 +40,11 @@
              @click.prevent="getProductId(item.id)">
               <div class="cardImg"
                 :style="{backgroundImage: `url(${ item.imageUrl })`}">
-                <p style="width:50px; height:50px;"
+                <div style="width:50px; height:50px;"
                  class="float-right bg-white rounded-circle m-1
-                 d-flex justify-content-center align-items-center">
-                  <FavoriteProduct :productid="item.id"></FavoriteProduct>
-                </p>
+                  d-flex justify-content-center align-items-center">
+                    <FavoriteProduct :productid="item.id"></FavoriteProduct>
+                </div>
               </div>
               <div class="card-body">
                 <span class="badge badge-light ml-2 dataText">{{ item.category }}</span>
@@ -204,6 +204,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .container {
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 1280px;
+  }
   .menuColor {
     font-size: 18px;
     font-weight: 400;
@@ -292,9 +297,6 @@ export default {
   @media (max-width: 420px) {
     .menuBar {
       flex-direction: column;
-    }
-    .container {
-      margin-top: 2em;
     }
     .cardImg {
       height: 200px;

@@ -182,7 +182,7 @@ export default {
   .container {
     padding-right: 0;
     padding-left: 0;
-    max-width: 1280px;
+    max-width: 100%;
     height: 100%;
     flex: 1;
   }

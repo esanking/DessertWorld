@@ -2,26 +2,28 @@
   <div>
     <div class=" my-2">
       <div class="row buyMes">
-        <div class="col text-center">
-          <div style="height: 72px;"
+        <div class="col">
+          <div style="height: 85px;" class="d-flex justify-content-center flex-column
+           align-items-center"
            :class="{ 'bg-light text-white active': progress != '1',
            'bg-primary text-white active': progress === '1' }">
             <strong>STEP 01</strong>
             <p><b>確認訂單資訊</b></p>
           </div>
         </div>
-        <div class="col text-center">
-          <div style="height: 72px;"
+        <div class="col">
+          <div style="height: 85px;" class="d-flex justify-content-center flex-column
+           align-items-center"
            :class="{ 'bg-light text-white active': progress === '3',
            'bg-primary text-white active': progress === '2' }">
             <strong>STEP 02</strong>
             <p><b>輸入訂購資料</b></p>
           </div>
         </div>
-        <div class="col text-center">
-          <div style="height: 72px;"
-            :class="{'bg-primary text-white active': progress === '3',
-              'bg-light text-white active': progress === '4'}">
+        <div class="col">
+          <div style="height: 85px;" class="d-flex justify-content-center flex-column
+           align-items-center"
+            :class="{ 'bg-primary text-white active': progress === '3' }">
             <strong>STEP 03</strong>
             <p>
               <b>

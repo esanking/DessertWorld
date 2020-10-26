@@ -165,7 +165,7 @@ export default {
     bottom: 70px;
     right: 85px;
     border-radius: 0.25rem;
-    box-shadow: 0.1rem 0rem 0.2rem 0.2rem #C7B259;
+    box-shadow: 0.1rem 0rem 0.2rem 0.2rem #dee2e6;
     background-color: #fff;
     z-index: 1000;
   }

@@ -1,63 +1,65 @@
 <template>
-  <div class="my-5">
-    <div v-if="favorite.length === 0" class="favoriteList">
-      <div>
-        <h4 class="my-5">
-          <b>快去加入喜歡的商品</b>
-        </h4>
-        <div data-aos="fade-up" data-aos-duration="3000"
-         class="d-flex justify-content-center my-5">
-            <i class="fas fa-angle-double-down text-primary" style="font-size:50px"></i>
+  <div>
+    <div class="container my-5">
+      <div v-if="favorite.length === 0" class="favoriteList">
+        <div>
+          <h4 class="my-5">
+            <b>快去加入喜歡的商品</b>
+          </h4>
+          <div data-aos="fade-up" data-aos-duration="3000"
+          class="d-flex justify-content-center my-5">
+              <i class="fas fa-angle-double-down text-primary" style="font-size:50px"></i>
+          </div>
+          <router-link class="d-flex justify-content-center mb-5 text-decoration-none"
+          to="/menumodel">
+            <button class="btn btn-outline-primary rounded " type="button">
+              查看所有商品
+            </button>
+          </router-link>
         </div>
-        <router-link class="d-flex justify-content-center mb-5 text-decoration-none"
-         to="/menumodel">
-          <button class="btn btn-outline-primary rounded " type="button">
-             查看所有商品
-          </button>
-        </router-link>
       </div>
-    </div>
-    <div class="tableClass" v-else>
-      <table class="table tables">
-        <thead>
-          <tr style="font-size:24px;">
-            <th width="150" class="text-center">商品資訊</th>
-            <th width="150" class="text-center">加入購物車</th>
-            <th width="150" class="text-center">移除收藏</th>
-          </tr>
-        </thead>
-        <tbody style="font-size:18px;">
-          <tr v-for="(item, index) in newHeartList" :key="index">
-            <td>
-              <div class="productIfm">
-                <div
-                  class="orderImg img-fluid mr-2" style="cursor: pointer;"
-                  @click.prevent="getProductId(item.id)">
-                  <img :src="item.imageUrl" alt="商品照片" class="w-100 h-100">
+      <div class="tableClass" v-else>
+        <table class="table tables">
+          <thead>
+            <tr style="font-size:24px;">
+              <th width="150" class="text-center">商品資訊</th>
+              <th width="150" class="text-center">加入購物車</th>
+              <th width="150" class="text-center">移除收藏</th>
+            </tr>
+          </thead>
+          <tbody style="font-size:18px;">
+            <tr v-for="(item, index) in newHeartList" :key="index">
+              <td>
+                <div class="productIfm">
+                  <div
+                    class="orderImg img-fluid mr-2" style="cursor: pointer;"
+                    @click.prevent="getProductId(item.id)">
+                    <img :src="item.imageUrl" alt="商品照片" class="w-100 h-100">
+                  </div>
+                  <div class="align-self-center" @click.prevent="getProductId(item.id)"
+                    style="cursor: pointer;">
+                    <b>
+                      {{ item.title }}
+                    <br>
+                      {{ item.price | currency }}
+                    </b>
+                  </div>
                 </div>
-                <div class="align-self-center" @click.prevent="getProductId(item.id)"
-                   style="cursor: pointer;">
-                  <b>
-                    {{ item.title }}
-                  <br>
-                    {{ item.price | currency }}
-                  </b>
-                </div>
-              </div>
-            </td>
-            <td class="align-middle text-center" title="加入購物車">
-              <a href="#" class="text-primary" @click.prevent="addCart(item.id)">
-                <i class="fas fa-cart-plus" style="font-size:24px;"></i>
-              </a>
-            </td>
-            <td class="align-middle text-center" title="移除收藏">
-              <a href="#" class="text-light" @click.prevent="removeHeart(item.id)">
-                <i class="fas fa-trash-alt" style="font-size:24px;"></i>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              </td>
+              <td class="align-middle text-center" title="加入購物車">
+                <a href="#" class="text-primary" @click.prevent="addCart(item.id)">
+                  <i class="fas fa-cart-plus" style="font-size:24px;"></i>
+                </a>
+              </td>
+              <td class="align-middle text-center" title="移除收藏">
+                <a href="#" class="text-light" @click.prevent="removeHeart(item.id)">
+                  <i class="fas fa-trash-alt" style="font-size:24px;"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -125,6 +127,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .container {
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 1280px;
+  }
   .orderImg {
     background-position: center;
     background-size: cover;
