@@ -29,7 +29,7 @@
       </tbody>
     </table>
     </div>
-    <pagination :pages="pagination" @changedpage="getorderList"
+    <Pagination :pages="Paginations" @changedpage="getorderList"
       class="page"/>
   </div>
 </template>
@@ -40,7 +40,7 @@ import Pagination from '@/components/Pagination.vue';
 export default {
   data() {
     return {
-      Pagination: {},
+      Paginations: {},
       order: [],
     };
   },
@@ -55,7 +55,7 @@ export default {
       vm.$http.get(api).then((response) => {
         vm.$store.dispatch('updateLoading', false);
         vm.order = response.data.orders;
-        vm.pagination = response.data.pagination;
+        vm.Paginations = response.data.pagination;
       });
     },
   },

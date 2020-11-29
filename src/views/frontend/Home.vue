@@ -6,12 +6,14 @@
           <router-link to="/menumodel">
             <div class="d-block w-100 bgCover carousel01" alt="First slide"></div>
             <div class="carouseText d-none d-md-block">
-              <h1 class="display-4">前往甜點世界</h1>
-              <h4>讓甜食讓生活更美好</h4>
-              <button class="btn btn-primary">
-                <router-link class="carouselBtnSz text-white text-decoration-none"
-                to="/menumodel">前往商品區</router-link>
-              </button>
+              <div class="my-2">
+                <h1 class="display-4">前往甜點世界</h1>
+                <h4>讓甜食讓生活更美好</h4>
+                <button class="btn btn-primary">
+                  <router-link class="carouselBtnSz text-white text-decoration-none"
+                  to="/menumodel">前往商品區</router-link>
+                </button>
+              </div>
             </div>
           </router-link>
         </div>
@@ -19,12 +21,14 @@
           <router-link to="/menumodel">
             <div class="d-block w-100 bgCover carousel02" alt="First slide"></div>
             <div class="carouseText d-none d-md-block">
-              <h1 class="display-4">前往甜點世界</h1>
-              <h4>讓甜食讓生活更美好</h4>
-              <button class="btn btn-primary">
-                <router-link class="carouselBtnSz text-white text-decoration-none"
-                to="/menumodel">前往商品區</router-link>
-              </button>
+              <div class="my-2">
+                <h1 class="display-4">前往甜點世界</h1>
+                <h4>讓甜食讓生活更美好</h4>
+                <button class="btn btn-primary">
+                  <router-link class="carouselBtnSz text-white text-decoration-none"
+                  to="/menumodel">前往商品區</router-link>
+                </button>
+              </div>
             </div>
           </router-link>
         </div>
@@ -32,12 +36,14 @@
           <router-link to="/menumodel">
             <div class="d-block w-100 bgCover carousel03" alt="First slide"></div>
             <div class="carouseText d-none d-md-block">
-              <h1 class="display-4">前往甜點世界</h1>
-              <h4>讓甜食讓生活更美好</h4>
-              <button class="btn btn-primary">
-                <router-link class="carouselBtnSz text-white text-decoration-none"
-                to="/menumodel">前往商品區</router-link>
-              </button>
+              <div class="my-2">
+                <h1 class="display-4">前往甜點世界</h1>
+                <h4>讓甜食讓生活更美好</h4>
+                <button class="btn btn-primary">
+                  <router-link class="carouselBtnSz text-white text-decoration-none"
+                  to="/menumodel">前往商品區</router-link>
+                </button>
+              </div>
             </div>
           </router-link>
         </div>
@@ -107,24 +113,18 @@
             <div class="texts order-lg-1" data-aos="fade-right" data-aos-duration="2000">
               <h3 class="py-4 border-bottom title">DessertWorld 名字的由來</h3>
               <p>
-                很多人好奇，為什麼我們要名字為「 DessertWorld 」呢？
+                很多人好奇，為什麼我們名字為「 DessertWorld 」? 源頭到底是什麼呢?
               <br>
-              源頭到底是什麼呢?
-              <br>
-              其實就是字面上的意思 Dessert 甜點 World 世界就形成了
-              <br>
+              其實就是字面上的意思 Dessert ( 甜點 ) World ( 世界 ) 就形成
               DessertWorld簡顯易懂的美名了，是不是看過就記住了呢。
               <br>
               <br>
               老闆有在法國留學過，他希望法式麵包跟台式麵包來做結合，
-              <br>
               用法國製作麵包的口感結合台灣天然水果，讓喜愛法式口感麵包的人
-              <br>
               彷彿身在法國，又享受著台灣水果的美好。
               <br>
               <br>
               所以希望用麵包跟甜點，讓人感覺在台灣法國兩邊跑，
-              <br>
               透過甜點來傳達，所以是 DessertWorld 的由來。</p>
             </div>
           </div>
@@ -146,14 +146,12 @@
               <br>
                 很多人好奇，為什麼我要開「 DessertWorld 」這間店呢？
               <br>
-                可能就是我熱愛做甜點，也想把熱愛的台灣水果帶給大家品嘗
+                可能就是我熱愛做甜點，也想把熱愛的台灣水果帶給大家品嘗。
               <br>
               <br>
                 老闆我有在法國留學過，我希望透過法式麵包跟台式麵包
-              <br>
-                來做結合，用法國製作麵包的口感結合台灣天然水果
-              <br>
-                所以我一直研究怎麼樣調配出，出其不意的好味道。
+              來做結合，用法國製作麵包的口感結合台灣天然水果
+              所以我一直研究怎麼樣調配出，出其不意的好味道。
               <br>
               <br>
                 直到2016年調配出一套配方，出來開店。
@@ -171,16 +169,15 @@
           <div data-aos="flip-left" data-aos-duration="3000" class="texts order-lg-1">
             <h3 class="py-4 border-bottom title">Dessert World 創業精神</h3>
             <div class="mt-5 ">
-              <p>DessertWorld 成立於2016年，店址坐落於東石漁人碼頭旁，
+              <p>DessertWorld 成立於2016年，店址坐落於東石漁人碼頭旁。
               <br>
               堅持新鮮、天然、健康的食材，創新的理念，每日手工限量生產。
               <br>
               <br>
-                我們嚴選品質，以最佳的原物料做出許多暢銷產品:
+                我們嚴選品質，以最佳的原物料做出許多暢銷產品 :
+                法國麵包、牛奶可頌麵包
               <br>
-                法國麵包、牛奶可頌麵包，
-              <br>
-                生日蛋糕首選的:巧克力熔岩生日蛋糕
+                生日蛋糕首選的 : 巧克力熔岩生日蛋糕
               <br>
                 歡迎您前來下訂品嘗!</p>
             </div>
@@ -197,8 +194,7 @@
               <br>
               <br>
                 讓客人踏進店時彷彿到了歐洲有了異國風情的感覺
-              <br>
-              時代越來越進步，也慢慢從店面轉型成電商平台，讓更多人可以品嘗到
+              ；時代越來越進步，也慢慢從店面轉型成電商平台，讓更多人可以品嘗到
               <br>
               <br>
               所有商品都由宅配方式運送，保持食材的新鮮，全台皆有配送
@@ -222,7 +218,7 @@
               <br>
               輸入: <span id="copythis"> 520 </span>，享 8折 優惠。
               <a href="javascript:void(0)" @click="CopyTextToClipboard('copythis')">
-                <i class="fas fa-clipboard"></i>
+                <i class="fas fa-clipboard">複製優惠碼</i>
               </a>
               </p>
             </div>

@@ -15,12 +15,12 @@
       </nav>
       <div class="wraps">
         <div class="productItem mt-4">
-          <div class="productItemIn col-md-8">
+          <div class="productItemIn col-lg-8">
             <span class="row">
               <img :src="product.imageUrl" alt= "商品照片" />
             </span>
           </div>
-          <div class="productItemIn col-md-4">
+          <div class="productItemIn col-lg-4">
             <div class="row">
               <span class="title">{{ product.title }}</span>
               <div style=" font-size:18px;" class="mt-4 d-flex justify-content-end">
@@ -201,12 +201,11 @@ export default {
     text-align: center;
   }
   .productItemIn img {
-    width: 70%;
-    margin: 0 auto;
+    width: 95%;
   }
   .RelatedText {
     position: relative;
-    width: 25%;
+    width: 45%;
   }
   .RelatedText::before {
     content: "";
@@ -227,9 +226,6 @@ export default {
     transform: translateY(-50%);
     height: 3px;
     background-color: #000;
-  }
-  .bakeryImgSz {
-    width: 80%;
   }
   .cards {
     display: flex;
@@ -263,9 +259,6 @@ export default {
   @media (max-width: 576px) {
     .productItemIn img {
       width: 100%;
-    }
-    .bakeryImgSz {
-      width: 98%;
     }
     .RelatedText {
       width: 90%;

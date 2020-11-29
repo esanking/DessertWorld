@@ -21,32 +21,39 @@
           <ul class="navbar-nav" style="font-size:18px; ">
             <li class="nav-item active">
               <router-link class="nav-link headerFz"
+              data-toggle="collapse"
+              data-target="#navbarNav"
               to="/" title="首頁">首頁</router-link>
             </li>
             <li class="nav-item active">
               <router-link class="nav-link headerFz"
+              data-toggle="collapse"
+              data-target="#navbarNav"
               to="/menumodel" title="商品列表">商品列表</router-link>
             </li>
           </ul>
           <ul class="navbar-nav font-weight-bold" style="font-size:20px;">
             <li class="nav-item">
               <router-link class="nav-link text-dark headerFz"
+              data-toggle="collapse"
+              data-target="#navbarNav"
               to="/favoriteList" title="我的最愛">
-                <!-- <i class="fas fa-heart"></i> -->
                 收藏
               </router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link text-dark headerFz"
+              data-toggle="collapse"
+              data-target="#navbarNav"
               to="/login" title="後台登入系統">
-                <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
                   後台登入
               </router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link text-dark headerFz"
+              data-toggle="collapse"
+              data-target="#navbarNav"
               to="/ordercheck" title="購物車">
-                <!-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> -->
                 購物車
               </router-link>
             </li>
@@ -59,9 +66,9 @@
       <footer class="w-100 bg-light">
         <div class="footer ">
           <div class="footerGroup align-items-center align-items-lg-end">
-            <router-link class="smlogo" to="/">
+            <!-- <router-link class="smlogo" to="/">
               <img src="@/assets/img/logoFooter.jpg" alt="Logo">
-            </router-link>
+            </router-link> -->
             <ul class="text-left" style="font-size: 18px; list-style-type: none;">
               <li><i class="fa fa-phone-square" aria-hidden="true"></i><b>05-1234567</b></li>
               <li><i class="fa fa-envelope" aria-hidden="true"></i>
@@ -205,7 +212,7 @@ export default {
   @media (max-width: 991px) {
     .menu {
       position: absolute;
-      top: 56px;
+      top: 70px;
       z-index:100;
       transition: 1.5s;
       background-color:white;
