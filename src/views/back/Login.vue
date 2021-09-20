@@ -55,6 +55,8 @@ export default {
       vm.$store.dispatch('updateLoading', true);
       vm.$http.post(api, vm.user).then((response) => {
         if (response.data.success) {
+          const { token, expired } = response.data;
+          document.cookie = `hexToken=${token}; expires=${new Date(expired)}`;
           vm.$router.push('/products');
           vm.$store.dispatch('updateLoading', false);
           vm.alertMsg = false;

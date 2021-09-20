@@ -252,7 +252,7 @@ export default {
     },
     delModalcheak() {
       const vm = this;
-      const api = `${process.env.VUE_APP_APIPATH}/api/ ${process.env.VUE_APP_CUSTOMPATH}/admin/coupon/${vm.delcoupon.id}`;
+      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon/${vm.delcoupon.id}`;
       vm.$http.delete(api).then((response) => {
         if (response.data.sucess) {
           $('#delcouponModal').modal('hide');
@@ -265,13 +265,13 @@ export default {
       $('#delcouponModal').modal('hide');
     },
     updatecoupon() {
-      let api = `${process.env.VUE_APP_APIPATH}/api/ ${process.env.VUE_APP_CUSTOMPATH}/admin/coupon`;
+      let api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon`;
       let httpmethods = 'post';
       const vm = this;
       const timestamp = new Date(vm.tempcoupon.due_date).getTime();
       vm.tempcoupon.due_date = Math.floor(timestamp / 1000);
       if (!vm.isnew) {
-        api = `${process.env.VUE_APP_APIPATH}/api/ ${process.env.VUE_APP_CUSTOMPATH}/admin/coupon/${vm.tempcoupon.id}`;
+        api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon/${vm.tempcoupon.id}`;
         httpmethods = 'put';
       }
       vm.$http[httpmethods](api, { data: vm.tempcoupon }).then((response) => {
